@@ -1,6 +1,6 @@
 <?php
 
-namespace kernl\WPFeatureFlags;
+namespace kernl;
 
 class WPFeatureFlags {
 
