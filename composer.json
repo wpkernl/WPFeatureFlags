@@ -1,0 +1,21 @@
+{
+    "name": "kernl/wp-feature-flags",
+    "description": "Feature flagging for WordPress.",
+    "keywords": ["kernl", "feature flags", "flags"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jack Slingerland",
+            "email": "jack@kernl.us"
+        }
+    ],
+    "type": "project",
+    "require": {
+		"php": ">=5.4"
+    },
+	"autoload": {
+        "psr-4": {
+            "kernl\\WPFeatureFlags\\": "src/"
+        }
+    }
+}
