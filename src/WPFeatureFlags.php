@@ -22,31 +22,25 @@ class WPFeatureFlags {
 
       // Does not have flags or key doesn't exist.
       if (!$this->hasFlags() || !$this->flagExists($flagIdentifier)) {
-          echo "No flags";
           $lastChecked = get_transient($this->getLastCheckKey());
 
           // No last checked transient or it's been more than 5 minutes since last check
           if (!$lastChecked || ((time() - $lastChecked) > 60 * 5)) {
               $this->updateFlags();
 
-              echo "flags have been updated.";
               // Flags updated, lets see if we have anything new.
               if (!$this->hasFlags() || !$this->flagExists($flagIdentifier)) {
-                  echo "no flag found after update";
                   return $this->failActive;
               } else {
-                  echo "flag found after update.";
                   return $this->flags[$flagIdentifier];
               }
 
           } else {
-              echo "Not enough time passed to try fetching flags again";
               return $this->failActive;
           }
 
       // Flag found, return.
       } else {
-          echo "flag found.";
           return $this->flags[$flagIdentifier];
       }
   }
