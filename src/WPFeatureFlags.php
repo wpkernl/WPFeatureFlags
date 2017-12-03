@@ -16,6 +16,7 @@ class WPFeatureFlags {
       $this->userIdentifier = $userIdentifier;
       $this->failActive = $failActive;
       $this->flags = get_transient($this->getFlagKey());
+      $this->flagCount = count($this->flags);
   }
 
   public function active($flagIdentifier) {
@@ -60,7 +61,7 @@ class WPFeatureFlags {
   }
 
   private function hasFlags() {
-      return $this->flagCount === 0;
+      return $this->flagCount > 0;
   }
 
   private function updateFlags() {
