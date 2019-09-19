@@ -40,4 +40,4 @@ The best way to install the library is with Composer.
 
 ### Performance Optimizations
 
-This library makes some small performance optimizations by storing flag data for users as transients.  The default time length is 5 minutes, so your flag state will become eventually consistent.  Storing the data as transients allows it to be cached by commmon WordPress caching plugins.
+This library makes some small performance optimizations by storing flag data for users as transients.  The default time length is 5 minutes, so your flag state will become eventually consistent.
